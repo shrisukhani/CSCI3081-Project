@@ -25,6 +25,7 @@ Controller::Controller() : last_dt(0) {
   aparams.n_obstacles = N_OBSTACLES;
   aparams.x_dim = ARENA_X_DIM;
   aparams.y_dim = ARENA_Y_DIM;
+  aparams.n_bases = N_BASES;
 
   arena_ = new Arena(&aparams);
 
@@ -56,14 +57,15 @@ void Controller::AcceptCommunication(Communication com) {
   * @TODO: Complete the conversion code for all key presses.
   */
 Communication Controller::ConvertComm(Communication com) {
+  // No need for break statements 'cause each case is returning a Communication
   switch (com) {
-    case (kKeyUp) :
-    case (kKeyDown) :
-    case (kKeyLeft) :
-    case (kKeyRight) :
-    case (kPlay) :
-    case (kPause) :
-    case (kNewGame) : 
+    case (kKeyUp) : return kIncreaseSpeed;
+    case (kKeyDown) : return kDecreaseSpeed;
+    case (kKeyLeft) : return kTurnLeft;
+    case (kKeyRight) : return kTurnRight;
+    case (kPlay) : return kPlay; // Not sure about this one
+    case (kPause) : return kPause;
+    case (kNewGame) : return kReset;
     default: return kNone;
   }
 }

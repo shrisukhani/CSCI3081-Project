@@ -188,10 +188,17 @@ void Arena::AdjustEntityOverlap(ArenaMobileEntity * const mobile_e,
   */
 void Arena::AcceptCommand(Communication com) {
   switch (com) {
-    case(kIncreaseSpeed):
-    case(kDecreaseSpeed):
-    case(kTurnLeft):
-    case(kTurnRight):
+    case(kIncreaseSpeed): if (robot_->get_speed() < ROBOT_MAX_SPEED - ROBOT_SPEED_DELTA) {
+                            robot_->IncreaseSpeed();
+                          }
+			                    break;
+    case(kDecreaseSpeed): if (robot_->get_speed() > 0 + ROBOT_SPEED_DELTA) {
+                            robot_->DecreaseSpeed();
+                          }
+                          break;
+    // Not sure if checks are necessary here. Look into it a little bit later.
+    case(kTurnLeft): robot_->TurnLeft();
+    case(kTurnRight): robot_->TurnRight();
     case(kPlay):
     case(kPause):
     case(kReset):

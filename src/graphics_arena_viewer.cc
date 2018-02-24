@@ -79,7 +79,17 @@ void GraphicsArenaViewer::OnSpecialKeyDown(int key,
     Communication key_value = kNone;
     switch (key) {
       case GLFW_KEY_LEFT:
+	   keyValue = kKeyLeft;
         break;
+      case GLFW_KEY_RIGHT:
+	   keyValue = kKeyRight;
+	break;
+      case GLFW_KEY_UP:
+	   keyValue = kKeyUp;
+	break;
+      case GLFW_KEY_UP:
+	   keyValue = kKeyDown;
+	break; // MIGHT Need to change to speed communications but let's see.
       default: {}
     }
   controller_->AcceptCommunication(key_value);
