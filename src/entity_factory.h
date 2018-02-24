@@ -83,11 +83,11 @@ class EntityFactory {
   * @brief An attempt to not overlap any of the newly constructed entities.
   */
   Pose SetPoseRandomly();
-  
+
   /**
   * @brief Returns a random radius between OBSTACLE_MIN_RADIUS and OBSTACLE_MAX_RADIUS
   */
-  Double SetRadiusRandomly();
+  double SetRadiusRandomly();
 
   /* Factory tracks the number of created entities. There is no accounting for
    * the destruction of entities */
