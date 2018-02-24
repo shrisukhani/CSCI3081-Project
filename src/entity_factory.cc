@@ -61,12 +61,18 @@ Robot* EntityFactory::CreateRobot() {
   return robot;
 }
 
+Double EntityFactory::SetRadiusRandomly() {
+  // OBSTACLE_MIN_RAIDUS and OBSTACLE_MAX_RADIUS are available from params.h
+  double val = (double)rand() / RAND_MAX;
+  return OBSTACLE_MIN_RADIUS + val*(OBSTACLE_MAX_RADIUS - OBSTACLE_MIN_RADIUS);
+}
+
 Obstacle* EntityFactory::CreateObstacle() {
   auto* obstacle = new Obstacle;
   obstacle->set_type(kObstacle);
   obstacle->set_color(OBSTACLE_COLOR);
   obstacle->set_pose(SetPoseRandomly());
-  obstacle->set_radius(OBSTACLE_RADIUS);
+  obstacle->set_radius(SetRadiusRandomly());
   ++entity_count_;
   ++obstacle_count_;
   obstacle->set_id(obstacle_count_);
