@@ -33,15 +33,19 @@ void MotionHandlerRobot::TurnRight() {
 }
 
 void MotionHandlerRobot::IncreaseSpeed() {
-  set_velocity(
-    get_velocity().left  + get_speed_delta(),
-    get_velocity().right + get_speed_delta());
+  if ((get_velocity().left < (ROBOT_MAX_SPEED - ROBOT_SPEED_DELTA)) && (get_velocity().right < (ROBOT_MAX_SPEED - ROBOT_SPEED_DELTA))) {
+    set_velocity(
+      get_velocity().left  + get_speed_delta(),
+      get_velocity().right + get_speed_delta());
+  }
 }
 
 void MotionHandlerRobot::DecreaseSpeed() {
-  set_velocity(
-    get_velocity().left  - get_speed_delta(),
-    get_velocity().right - get_speed_delta());
+  if ((get_velocity().left > ROBOT_SPEED_DELTA) && (get_velocity().right > ROBOT_SPEED_DELTA)) {
+    set_velocity(
+      get_velocity().left  - get_speed_delta(),
+      get_velocity().right - get_speed_delta());
+  }
 }
 
 void MotionHandlerRobot::UpdateVelocity() {

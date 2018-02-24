@@ -97,10 +97,10 @@ class Robot : public ArenaMobileEntity {
   void TurnLeft();
 
   /**
-  * @brief Retuns number of lives 
+  * @brief Retuns number of lives
   */
   int get_lives() { return lives_; }
-	
+
   /**
   * @brief Sets number of lives to l
   */
