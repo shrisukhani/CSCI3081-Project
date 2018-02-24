@@ -96,8 +96,14 @@ class Robot : public ArenaMobileEntity {
   */
   void TurnLeft();
 
+  /**
+  * @brief Retuns number of lives 
+  */
   int get_lives() { return lives_; }
-
+	
+  /**
+  * @brief Sets number of lives to l
+  */
   void set_lives(int l) { lives_ = l; }
 
   MotionHandlerRobot get_motion_handler() { return motion_handler_; }
