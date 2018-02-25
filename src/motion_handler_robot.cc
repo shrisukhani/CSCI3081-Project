@@ -47,7 +47,7 @@ void MotionHandlerRobot::IncreaseSpeed() {
 }
 
 void MotionHandlerRobot::DecreaseSpeed() {
-  if ((get_velocity().left > ROBOT_SPEED_DELTA) && (get_velocity().right > ROBOT_SPEED_DELTA)) {
+  if ((get_velocity().left >= ROBOT_SPEED_DELTA) && (get_velocity().right >= ROBOT_SPEED_DELTA)) {
     set_velocity(
       get_velocity().left  - get_speed_delta(),
       get_velocity().right - get_speed_delta());
