@@ -49,7 +49,7 @@ void Robot::Reset() {
 } /* Reset() */
 
 void Robot::HandleCollision(EntityType object_type, ArenaEntity * object) {
-  motion_handler_->Stop();
+  motion_handler_.Stop();
   sensor_touch_->HandleCollision(object_type, object);
 } /* HandleCollision() */
 
