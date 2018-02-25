@@ -68,6 +68,11 @@ class MotionHandlerRobot : public MotionHandler {
   void TurnRight() override;
 
   /**
+   * @brief Sets the velocity of the motion_handler to 0 to make it stop. 
+   */
+  void Stop();
+
+  /**
    * @brief Turn the entity to the left by angle_delta (in degrees?)
    */
   void TurnLeft() override;

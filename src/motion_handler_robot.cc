@@ -32,6 +32,13 @@ void MotionHandlerRobot::TurnRight() {
     get_velocity().right - get_angle_delta());
 }
 
+void MotionHandlerRobot::Stop() {
+  set_speed = 0;
+  set_velocity(
+    0.0,
+    0.0);
+}
+
 void MotionHandlerRobot::IncreaseSpeed() {
   if ((get_velocity().left <= (ROBOT_MAX_SPEED - ROBOT_SPEED_DELTA)) && (get_velocity().right <= (ROBOT_MAX_SPEED - ROBOT_SPEED_DELTA))) {
     set_velocity(
