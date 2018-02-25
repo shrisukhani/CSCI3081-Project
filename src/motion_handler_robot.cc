@@ -33,7 +33,6 @@ void MotionHandlerRobot::TurnRight() {
 }
 
 void MotionHandlerRobot::Stop() {
-  set_speed = 0;
   set_velocity(
     0.0,
     0.0);
