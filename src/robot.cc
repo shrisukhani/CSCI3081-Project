@@ -59,8 +59,8 @@ void Robot::HandleCollision(EntityType object_type, ArenaEntity * object) {
     case kBottomWall:
     case kObstacle: lives_--;
                     break;
-    case kBase: object->change_color();
-                if (static_cast<Base *>(object)->IsCaptured() == false) {
+    case kBase: if (static_cast<Base *>(object)->IsCaptured() == false) {
+                  object->change_color();
                   static_cast<Base *>(object)->set_captured(true);
                   num_bases_captured ++;
                 }
