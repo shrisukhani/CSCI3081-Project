@@ -51,6 +51,17 @@ void Robot::Reset() {
 void Robot::HandleCollision(EntityType object_type, ArenaEntity * object) {
   set_speed(0);
   motion_handler_.Stop();
+  switch (object_type) {
+    case kRightWall:
+    case kLeftWall:
+    case kTopWall:
+    case kBottomWall:
+    case kObstacle: lives_--;
+                    break;
+    case kBase: object->change_color();
+                break;
+    default: break;
+  }
   sensor_touch_->HandleCollision(object_type, object);
 } /* HandleCollision() */
 

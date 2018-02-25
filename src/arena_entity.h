@@ -90,6 +90,20 @@ class ArenaEntity {
   }
 
   /**
+   * @brief changes the color of the arena_entity to rgb values exactly half
+   * of the current values except for white, in which case, sets it to kBlack
+   */
+  void change_color() {
+    if (color_.r == 0 && color_.g == 0 && color_.b == 0) {
+      color_.Set(kBlack);
+    } else {
+      color_.r /= 2;
+      color_.g /= 2;
+      color_.b /= 2;
+    }
+  }
+
+  /**
    * @brief Setter method for heading within entity pose variable.
    */
   void set_heading(const double t) {pose_.theta = t;}
