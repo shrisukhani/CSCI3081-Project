@@ -63,7 +63,7 @@ Robot* EntityFactory::CreateRobot() {
 
 double EntityFactory::SetRadiusRandomly() {
   // OBSTACLE_MIN_RAIDUS and OBSTACLE_MAX_RADIUS are available from params.h
-  double val = (double)rand() / RAND_MAX;
+  double val = rand() / RAND_MAX;
   return OBSTACLE_MIN_RADIUS + val*(OBSTACLE_MAX_RADIUS - OBSTACLE_MIN_RADIUS);
 }
 
