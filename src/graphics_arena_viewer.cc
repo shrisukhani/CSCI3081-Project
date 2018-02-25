@@ -85,7 +85,7 @@ void GraphicsArenaViewer::OnSpecialKeyDown(int key,
 	   key_value = kKeyRight;
 	break;
       case GLFW_KEY_UP:
-	   keyValue = kKeyUp;
+	   key_value = kKeyUp;
 	break;
       case GLFW_KEY_DOWN:
 	   key_value = kKeyDown;
