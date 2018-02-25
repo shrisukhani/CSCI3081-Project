@@ -106,6 +106,8 @@ class Robot : public ArenaMobileEntity {
   */
   void set_lives(int l) { lives_ = l; }
 
+  int num_bases_captured{0};
+
   MotionHandlerRobot get_motion_handler() { return motion_handler_; }
 
   MotionBehaviorDifferential get_motion_behavior() { return motion_behavior_; }

@@ -9,6 +9,7 @@
  ******************************************************************************/
 #include "src/robot.h"
 #include "src/params.h"
+#include "src/base.h"
 
 /*******************************************************************************
  * Namespaces
@@ -59,6 +60,10 @@ void Robot::HandleCollision(EntityType object_type, ArenaEntity * object) {
     case kObstacle: lives_--;
                     break;
     case kBase: object->change_color();
+                if (static_cast<Base>(object)->IsCaptured() == false) {
+                  static_cast<Base>(object)->set_captured(true);
+                  num_bases_captured
+                }
                 break;
     default: break;
   }
