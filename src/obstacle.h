@@ -43,7 +43,7 @@ class Obstacle : public ArenaMobileEntity {
 
   void TimestepUpdate(unsigned int dt) override;
 
-  void HandleCollision(EntityType object_type, ArenaEntity * object = NULL) override;
+  void HandleCollision(EntityType object_type, ArenaEntity * object = nullptr) override;
 
   /**
    * @brief Get the name of the Obstacle for visualization purposes, and to
