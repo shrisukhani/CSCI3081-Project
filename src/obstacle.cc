@@ -55,13 +55,15 @@ void Obstacle::Reset() {
   // motion_behavior_(this);
 }
 
-void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object) {
+void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object = NULL) {
+  printf("\n\n\n\n HandleCollision Baby\n\n\n\n\n");
   switch (object_type) {
     case kRightWall:
     case kLeftWall:
     case kTopWall:
     case kBottomWall:
       motion_handler_.set_velocity(-2, -2);
+      motion_handler_.UpdateVelocity();
       break;
     case kRobot:
       break;
@@ -71,6 +73,7 @@ void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object) {
   }
   set_collision_timer(20);
   sensor_touch_->HandleCollision(object_type, object);
+  motion_handler_.UpdateVelocity();
 }
 
 
