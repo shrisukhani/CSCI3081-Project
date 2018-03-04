@@ -55,4 +55,28 @@ void Obstacle::Reset() {
   motion_behavior_(this);
 }
 
+void HandleCollision(EntityType object_type, ArenaEntity * object = NULL) {
+  switch (object_type) {
+    case kRightWall:
+    case kLeftWall:
+    case kTopWall:
+    case kBottomWall:
+      set_velocity(-2, -2);
+      break;
+    case kRobot:
+      set_collision_timer(20);
+      break;
+    case kBase:
+    if (static_cast<Base *>(object)->IsCaptured() == false) {
+      object->change_color();
+      static_cast<Base *>(object)->set_captured(true);
+      num_bases_captured ++;
+    }
+    break;
+    default: break;
+  }
+  sensor_touch_->HandleCollision(object_type, object);
+}
+
+
 NAMESPACE_END(csci3081);
