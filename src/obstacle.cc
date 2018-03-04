@@ -26,7 +26,14 @@ Obstacle::Obstacle() : motion_handler_(this), motion_behavior_(this) {
 }
 
 void Obstacle::TimestepUpdate(unsigned int dt) {
-  dt += 5; // Remove Later
+  // Update heading as indicated by touch sensor
+  motion_handler_.UpdateVelocity();
+
+  // Use velocity and position to update position
+  motion_behavior_.UpdatePose(dt, motion_handler_.get_velocity());
+
+  // Reset Sensor for next cycle
+  sensor_touch_->Reset();
 }
 
 void Obstacle::Reset() {
