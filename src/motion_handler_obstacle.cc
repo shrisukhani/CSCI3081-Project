@@ -39,13 +39,16 @@ void MotionHandlerObstacle::DecreaseSpeed() {}
 void MotionHandlerObstacle::UpdateVelocity() {
   if (entity_->get_touch_sensor()->get_output()) {
     entity_->RelativeChangeHeading(+180);
+    printf("Check 1");
   }
   if (entity_->get_collision_timer() > 0) {
+    printf("Check 3");
     entity_->set_collision_timer(entity_->get_collision_timer() - 1);
     entity_->RelativeChangeHeading(+20);
     if (entity_->get_collision_timer() == 0) {
       entity_->RelativeChangeHeading(+180);
     }
+    printf("check 3");
   }
 }
 
