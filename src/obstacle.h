@@ -17,6 +17,7 @@
 #include "src/entity_type.h"
 #include "src/pose.h"
 #include "src/motion_handler_obstacle.h"
+#include "src/motion_behavior_differential.h"
 
 /*******************************************************************************
  * Namespaces
@@ -41,7 +42,7 @@ class Obstacle : public ArenaMobileEntity {
   void Reset() override;
 
   void TimestepUpdate(unsigned int dt) override;
-  
+
   /**
    * @brief Get the name of the Obstacle for visualization purposes, and to
    * aid in debugging.
