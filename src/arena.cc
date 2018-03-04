@@ -105,7 +105,7 @@ void Arena::UpdateEntitiesTimestep() {
     EntityType wall = GetCollisionWall(ent1);
     if (kUndefined != wall) {
       AdjustWallOverlap(ent1, wall);
-      ent1_->HandleCollision(wall);
+      ent1->HandleCollision(wall);
     }
     /* Determine if that mobile entity is colliding with any other entity.
     * Adjust the position accordingly so they don't overlap.
