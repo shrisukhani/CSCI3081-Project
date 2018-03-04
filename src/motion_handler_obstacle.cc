@@ -36,7 +36,18 @@ void MotionHandlerObstacle::IncreaseSpeed() {}
 
 void MotionHandlerObstacle::DecreaseSpeed() {}
 //@TODO: Finish implementation
-void MotionHandlerObstacle::UpdateVelocity() {}
+void MotionHandlerObstacle::UpdateVelocity() {
+  if (entity_->get_touch_sensor()->get_output()) {
+    entity_->RelativeChangeHeading(+180);
+  }
+  if (entity_->get_collision_timer() > 0) {
+    entity_->set_collision_timer(entity_->get_collision_timer() - 1);
+    entity_->RelativeChangeHeading(+9);
+    if (entity_->get_collision_timer() == 0) {
+      entity_->RelativeChangeHeading(+180);
+    }
+  }
+}
 
 double MotionHandlerObstacle::clamp_vel(double vel) {
   return vel;

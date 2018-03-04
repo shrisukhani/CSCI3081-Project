@@ -143,6 +143,9 @@ class ArenaEntity {
    */
   void set_mobility(bool value) { is_mobile_ = value; }
 
+  int get_collision_timer() { return collision_timer_; }
+  void set_collision_timer(int ct) { collision_timer_ = ct; } 
+
  private:
   double radius_{DEFAULT_RADIUS};
   Pose pose_;
@@ -150,6 +153,7 @@ class ArenaEntity {
   EntityType type_{kEntity};
   int id_{-1};
   bool is_mobile_{false};
+  int get_collision_timer_{0};
 };
 
 NAMESPACE_END(csci3081);
