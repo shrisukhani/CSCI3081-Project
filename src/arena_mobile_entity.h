@@ -53,7 +53,7 @@ class ArenaMobileEntity : public ArenaEntity {
   virtual double get_speed() { return speed_; }
   virtual void set_speed(double sp) { speed_ = sp; }
 
-  virtual void HandleCollision(EntityType, ArenaEntity *) {};
+  virtual void HandleCollision(EntityType, ArenaEntity * object = NULL) {};
   /**
    * @brief Get a pointer to the ArenaMobileEntity's touch sensor.
   */
