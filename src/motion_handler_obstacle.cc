@@ -37,6 +37,7 @@ void MotionHandlerObstacle::IncreaseSpeed() {}
 void MotionHandlerObstacle::DecreaseSpeed() {}
 //@TODO: Finish implementation
 void MotionHandlerObstacle::UpdateVelocity() {
+  printf("Check 0");
   if (entity_->get_touch_sensor()->get_output()) {
     entity_->RelativeChangeHeading(+180);
     printf("Check 1");
