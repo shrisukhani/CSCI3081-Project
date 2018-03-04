@@ -65,8 +65,7 @@ void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object) {
     case kLeftWall:
     case kTopWall:
     case kBottomWall:
-      printf("\n\n\n\n\n\n\n\n\nBOOM\n\n\n\n\n");
-      motion_handler_.set_velocity(-2, -2);
+      motion_handler_.set_velocity(0.0);
       motion_handler_.UpdateVelocity();
       break;
     case kRobot:
