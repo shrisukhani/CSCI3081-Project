@@ -54,6 +54,7 @@ class Obstacle : public ArenaMobileEntity {
  private:
   MotionHandlerObstacle motion_handler_;
   MotionBehaviorDifferential motion_behavior_;
+  Pose SetPoseRandomly();
 };
 
 NAMESPACE_END(csci3081);
