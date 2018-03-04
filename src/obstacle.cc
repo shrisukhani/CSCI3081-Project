@@ -65,7 +65,7 @@ void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object) {
     case kLeftWall:
     case kTopWall:
     case kBottomWall:
-      motion_handler_.set_velocity(0.0);
+      motion_handler_.set_velocity(0.0, 0.0);
       motion_handler_.UpdateVelocity();
       break;
     case kRobot:
