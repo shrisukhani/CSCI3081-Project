@@ -55,7 +55,7 @@ void Obstacle::Reset() {
   // motion_behavior_(this);
 }
 
-void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object = NULL) {
+void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object) {
   printf("\n\n\n\n HandleCollision Baby\n\n\n\n\n");
   switch (object_type) {
     case kRightWall:
