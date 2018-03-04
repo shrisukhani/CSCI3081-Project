@@ -153,7 +153,7 @@ class ArenaEntity {
   EntityType type_{kEntity};
   int id_{-1};
   bool is_mobile_{false};
-  int get_collision_timer_{0};
+  int collision_timer_{0};
 };
 
 NAMESPACE_END(csci3081);
