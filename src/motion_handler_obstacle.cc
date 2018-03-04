@@ -38,6 +38,8 @@ void MotionHandlerObstacle::DecreaseSpeed() {}
 //@TODO: Finish implementation
 void MotionHandlerObstacle::UpdateVelocity() {}
 
-double MotionHandlerObstacle::clamp_vel(double vel) {}
+double MotionHandlerObstacle::clamp_vel(double vel) {
+  return 0.0;
+}
 
 NAMESPACE_END(csci3081);
