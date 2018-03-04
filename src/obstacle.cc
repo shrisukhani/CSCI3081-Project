@@ -19,6 +19,7 @@ NAMESPACE_BEGIN(csci3081);
  * Constructors/Destructor
  ******************************************************************************/
 Obstacle::Obstacle() : motion_handler_(this), motion_behavior_(this) {
+  motion_handler_.set_velocity(2,2);
   set_color(OBSTACLE_COLOR);
   set_pose(OBSTACLE_POSITION);
   set_radius(OBSTACLE_RADIUS);
