@@ -26,11 +26,11 @@ Obstacle::Obstacle() : motion_handler_(this), motion_behavior_(this) {
 }
 
 void Obstacle::TimestepUpdate(unsigned int dt) {
-
+  dt += 5; // Remove Later
 }
 
 void Obstacle::Reset() {
-  
+
 }
 
 NAMESPACE_END(csci3081);
