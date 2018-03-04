@@ -55,7 +55,7 @@ void Obstacle::Reset() {
   // motion_behavior_(this);
 }
 
-void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object = NULL) {
+void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object) {
   switch (object_type) {
     case kRightWall:
     case kLeftWall:
