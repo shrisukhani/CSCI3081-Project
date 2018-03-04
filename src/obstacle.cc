@@ -46,13 +46,13 @@ void Obstacle::TimestepUpdate(unsigned int dt) {
 void Obstacle::Reset() {
   double rad = static_cast<double>(rand());
   rad /= RAND_MAX;
-  return OBSTACLE_MIN_RADIUS + rad*(OBSTACLE_MAX_RADIUS - OBSTACLE_MIN_RADIUS);
+  rad  = OBSTACLE_MIN_RADIUS + rad*(OBSTACLE_MAX_RADIUS - OBSTACLE_MIN_RADIUS);
   set_pose(SetPoseRandomly());
   set_radius(rad);
   set_color(OBSTACLE_COLOR);
   sensor_touch_->Reset();
-  motion_handler_(this);
-  motion_behavior_(this);
+  motion_handler_.set_velocity(2, 2);
+  // motion_behavior_(this);
 }
 
 void HandleCollision(EntityType object_type, ArenaEntity * object = NULL) {
