@@ -19,6 +19,7 @@
 #include "src/entity_factory.h"
 #include "src/robot.h"
 #include "src/communication.h"
+#include "src/obstacle.h"
 
 /*******************************************************************************
  * Namespaces
