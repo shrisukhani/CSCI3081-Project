@@ -109,9 +109,8 @@ void Arena::UpdateEntitiesTimestep() {
       if (ent1->get_type() == kRobot) {
         ent1->HandleCollision(wall, NULL, true);
       } else {
-        ent1->HandleCollision(wall, NULL);
+        ent1->HandleCollision(wall, NULL, false);
       }
-      ent1->HandleCollision(wall, NULL);
     }
     /* Determine if that mobile entity is colliding with any other entity.
     * Adjust the position accordingly so they don't overlap.
@@ -123,7 +122,7 @@ void Arena::UpdateEntitiesTimestep() {
         if (ent1->get_type() == kRobot) {
           ent1->HandleCollision(ent2->get_type(), ent2, true);
         } else {
-          ent1->HandleCollision(ent2->get_type(), ent2);
+          ent1->HandleCollision(ent2->get_type(), ent2, false);
         }
       }
     }
