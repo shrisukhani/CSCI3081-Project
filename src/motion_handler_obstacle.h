@@ -77,8 +77,12 @@ class MotionHandlerObstacle : public MotionHandler {
    */
   void TurnLeft() override;
 
+  int get_collision_timer() { return collision_timer_; }
+  void set_collision_timer(int ct) { collision_timer_ = ct; }
+
  private:
   double clamp_vel(double vel);
+  int collision_timer_{0};
 };
 
 NAMESPACE_END(csci3081);

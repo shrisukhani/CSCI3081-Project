@@ -74,7 +74,7 @@ class Robot : public ArenaMobileEntity {
   /**
    * @brief Get the name of the Robot for visualization and for debugging.
    */
-  std::string get_name() const override { return ("Robot\n" + std::to_string(lives_) + " Lives"); }
+  std::string get_name() const override { return ("Robot. L:" + std::to_string(lives_)); }
 
   /**
    * @brief Command that comes from the controller, then is passed to handler.

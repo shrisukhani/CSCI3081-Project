@@ -40,7 +40,7 @@ GraphicsArenaViewer::GraphicsArenaViewer(
   gui->addGroup("Simulation Control");
   playing_button_ =
     gui->addButton(
-      "Playing",
+      "Play",
       std::bind(&GraphicsArenaViewer::OnPlayingBtnPressed, this));
   new_game_button_ =
     gui->addButton(
