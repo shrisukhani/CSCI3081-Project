@@ -51,7 +51,7 @@ void Robot::Reset() {
 
 } /* Reset() */
 
-void Robot::HandleCollision(EntityType object_type, ArenaEntity * object) {
+void Robot::HandleCollision(EntityType object_type, ArenaEntity * object, bool dec_robot_life) {
   set_speed(0);
   motion_handler_.Stop();
   switch (object_type) {
@@ -59,8 +59,11 @@ void Robot::HandleCollision(EntityType object_type, ArenaEntity * object) {
     case kLeftWall:
     case kTopWall:
     case kBottomWall:
-    case kObstacle: lives_--;
-                    break;
+    case kObstacle:
+      if (dec_robot_life) {
+        lives_--;
+      }
+      break;  
     case kBase: if (static_cast<Base *>(object)->IsCaptured() == false) {
                   object->change_color();
                   static_cast<Base *>(object)->set_captured(true);
