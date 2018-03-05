@@ -87,6 +87,13 @@ class GraphicsArenaViewer : public GraphicsApp {
   void OnPlayingBtnPressed();
 
   /**
+   * @brief Handle the user pressing the new game button on the GUI.
+   *
+   * This will reset and restart the graphics.
+   */
+  void OnNewGameBtnPressed();
+
+  /**
    * @brief Called each time the mouse moves on the screen within the GUI
    * window.
    *
@@ -229,6 +236,7 @@ class GraphicsArenaViewer : public GraphicsApp {
 
   // buttons
   nanogui::Button *playing_button_{nullptr};
+  nanogui::Button *new_game_button_{nullptr};
 };
 
 NAMESPACE_END(csci3081);

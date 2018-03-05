@@ -69,7 +69,7 @@ class Arena {
    * Arena::UpdateEntitiesTimestep() once.
    */
   void AdvanceTime(double dt);
-
+  
   void AddRobot();
   void AddEntity(EntityType type, int quantity);
 

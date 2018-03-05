@@ -42,6 +42,10 @@ GraphicsArenaViewer::GraphicsArenaViewer(
     gui->addButton(
       "Playing",
       std::bind(&GraphicsArenaViewer::OnPlayingBtnPressed, this));
+  new_game_button_ =
+    gui->addButton(
+      "New Game",
+      std::bind(&GraphicsArenaViewer::OnNewGameBtnPressed, this));
   screen()->performLayout();
 }
 
@@ -65,6 +69,10 @@ void GraphicsArenaViewer::OnPlayingBtnPressed() {
   } else {
     playing_button_->setCaption("Paused");
   }
+}
+
+void GraphicsArenaViewer::OnNewGameBtnPressed() {
+  arena_->Reset();
 }
 
 /** OnSpecialKeyDown is called when the user presses down on one of the
