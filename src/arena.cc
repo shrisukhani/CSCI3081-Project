@@ -69,9 +69,6 @@ void Arena::Reset() {
 // The primary driver of simulation movement. Called from the Controller
 // but originated from the graphics viewer.
 void Arena::AdvanceTime(double dt) {
-  if (game_status_ == PAUSED) {
-    return;
-  }
   if (!(dt > 0)) {
     return;
   }

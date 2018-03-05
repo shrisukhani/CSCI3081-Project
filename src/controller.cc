@@ -42,7 +42,9 @@ void Controller::AdvanceTime(double dt) {
     return;
   }
   last_dt = 0;
-  arena_->AdvanceTime(dt);
+  if (arena_->get_game_status() == PLAYING) {
+    arena_->AdvanceTime(dt);
+  }
 }
 
 void Controller::AcceptCommunication(Communication com) {
