@@ -35,11 +35,11 @@ void MotionHandlerObstacle::Stop(){
 void MotionHandlerObstacle::IncreaseSpeed() {}
 
 void MotionHandlerObstacle::DecreaseSpeed() {}
+
 //@TODO: Finish implementation
 void MotionHandlerObstacle::UpdateVelocity() {
   if (entity_->get_touch_sensor()->get_output()) {
     entity_->RelativeChangeHeading(+180);
-    printf("Check 1");
   }
   int collision_timer = get_collision_timer();
   if (collision_timer > 0) {
@@ -50,6 +50,10 @@ void MotionHandlerObstacle::UpdateVelocity() {
       entity_->RelativeChangeHeading(+180);
     }
   }
+  if (collision_timer == 0) {
+    entity_->RelativeChangeHeading(+180);
+  }
+
 }
 
 double MotionHandlerObstacle::clamp_vel(double vel) {
