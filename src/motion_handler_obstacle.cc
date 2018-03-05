@@ -49,8 +49,6 @@ void MotionHandlerObstacle::UpdateVelocity() {
       entity_->RelativeChangeHeading(+180);
     }
   }
-
-
 }
 
 double MotionHandlerObstacle::clamp_vel(double vel) {
