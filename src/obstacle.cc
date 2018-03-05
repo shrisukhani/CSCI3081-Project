@@ -19,17 +19,11 @@ NAMESPACE_BEGIN(csci3081);
  * Constructors/Destructor
  ******************************************************************************/
 Obstacle::Obstacle() : motion_handler_(this), motion_behavior_(this) {
-  motion_handler_.set_velocity(2,2);
+  motion_handler_.set_velocity(1,1);
   set_color(OBSTACLE_COLOR);
   set_pose(OBSTACLE_POSITION);
   set_radius(OBSTACLE_RADIUS);
   set_type(kObstacle);
-}
-
-Pose Obstacle::SetPoseRandomly() {
-  // Dividing arena into 19x14 grid. Each grid square is 50x50
-  return {static_cast<double>((30 + (random() % 19) * 50)),
-        static_cast<double>((30 + (random() % 14) * 50))};
 }
 
 void Obstacle::TimestepUpdate(unsigned int dt) {
@@ -44,14 +38,11 @@ void Obstacle::TimestepUpdate(unsigned int dt) {
 }
 
 void Obstacle::Reset() {
-  double rad = static_cast<double>(rand());
-  rad /= RAND_MAX;
-  rad  = OBSTACLE_MIN_RADIUS + rad*(OBSTACLE_MAX_RADIUS - OBSTACLE_MIN_RADIUS);
   set_pose(SetPoseRandomly());
-  set_radius(rad);
+  set_radius(SetRadiusRandomly());
   set_color(OBSTACLE_COLOR);
   sensor_touch_->Reset();
-  motion_handler_.set_velocity(2, 2);
+  motion_handler_.set_velocity(1, 1);
   // motion_behavior_(this);
 }
 
