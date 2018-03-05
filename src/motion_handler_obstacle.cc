@@ -43,7 +43,7 @@ void MotionHandlerObstacle::UpdateVelocity() {
   }
   int collision_timer = get_collision_timer();
   if (collision_timer > 0) {
-    entity_->RelativeChangeHeading(+9.0);
+    entity_->RelativeChangeHeading(+6.0);
     set_collision_timer(collision_timer - 1);
     if (collision_timer == 0) {
       entity_->RelativeChangeHeading(+180);
