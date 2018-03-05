@@ -46,7 +46,7 @@ void Obstacle::Reset() {
   // motion_behavior_(this);
 }
 
-void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object) {
+void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object, bool dec_robot_life) {
   motion_handler_.set_collision_timer(20);
   sensor_touch_->HandleCollision(object_type, object);
   motion_handler_.UpdateVelocity();
@@ -63,7 +63,9 @@ void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object) {
       break;
     case kBase:
       break;
-    default: break;
+    default:
+      dec_robot_life = !dec_robot_life;
+      break;
   }
 }
 
