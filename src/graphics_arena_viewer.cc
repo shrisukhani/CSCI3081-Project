@@ -65,11 +65,11 @@ void GraphicsArenaViewer::UpdateSimulation(double dt) {
 void GraphicsArenaViewer::OnPlayingBtnPressed() {
   // Not implemented. Sample code provided to show how to implement.
   if (!paused_) {
-    playing_button_->setCaption("Play");
+    playing_button_->setCaption("Pause");
     paused_ = true;
     controller_->AcceptCommunication(kPlay);
   } else {
-    playing_button_->setCaption("Pause");
+    playing_button_->setCaption("Play");
     paused_ = false;
     controller_->AcceptCommunication(kPause);
   }
