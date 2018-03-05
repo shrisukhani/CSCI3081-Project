@@ -232,7 +232,7 @@ class GraphicsArenaViewer : public GraphicsApp {
 
   Controller *controller_;
   Arena *arena_;
-  bool paused_{false};
+  bool paused_{true};
 
   // buttons
   nanogui::Button *playing_button_{nullptr};

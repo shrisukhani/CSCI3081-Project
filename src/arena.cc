@@ -27,7 +27,7 @@ Arena::Arena(const struct arena_params *const params)
       factory_(new EntityFactory),
       entities_(),
       mobile_entities_(),
-      game_status_(PLAYING) {
+      game_status_(PAUSED) {
   AddRobot();
   AddEntity(kBase, params->n_bases);
   AddEntity(kObstacle, params->n_obstacles);
