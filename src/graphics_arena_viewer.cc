@@ -65,14 +65,16 @@ void GraphicsArenaViewer::UpdateSimulation(double dt) {
 void GraphicsArenaViewer::OnPlayingBtnPressed() {
   // Not implemented. Sample code provided to show how to implement.
   if (!paused_) {
-    playing_button_->setCaption("Playing");
+    playing_button_->setCaption("Pause");
+    controller_->AcceptCommunication(kPause);
   } else {
-    playing_button_->setCaption("Paused");
+    playing_button_->setCaption("Play");
+    controller_->AcceptCommunication(kPlay);
   }
 }
 
 void GraphicsArenaViewer::OnNewGameBtnPressed() {
-  arena_->Reset();
+  controller_->AcceptCommunication(kNewGame);
 }
 
 /** OnSpecialKeyDown is called when the user presses down on one of the

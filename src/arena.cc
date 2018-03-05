@@ -69,6 +69,9 @@ void Arena::Reset() {
 // The primary driver of simulation movement. Called from the Controller
 // but originated from the graphics viewer.
 void Arena::AdvanceTime(double dt) {
+  if (game_status_ == PAUSED) {
+    return;
+  }
   if (!(dt > 0)) {
     return;
   }
@@ -202,18 +205,28 @@ void Arena::AdjustEntityOverlap(ArenaMobileEntity * const mobile_e,
   */
 void Arena::AcceptCommand(Communication com) {
   switch (com) {
-    case(kIncreaseSpeed): robot_->IncreaseSpeed();
-			                    break;
-    case(kDecreaseSpeed): robot_->DecreaseSpeed();
-                          break;
+    case(kIncreaseSpeed):
+      robot_->IncreaseSpeed();
+			break;
+    case(kDecreaseSpeed):
+      robot_->DecreaseSpeed();
+      break;
     // Not sure if checks are necessary here. Look into it a little bit later.
-    case(kTurnLeft): robot_->TurnLeft();
-                     break;
-    case(kTurnRight): robot_->TurnRight();
-                      break;
+    case(kTurnLeft):
+      robot_->TurnLeft();
+      break;
+    case(kTurnRight):
+      robot_->TurnRight();
+      break;
     case(kPlay):
+      game_status_ = PLAYING;
+      break;
     case(kPause):
+      game_status_ = PAUSED;
+      break;
     case(kReset):
+      Reset();
+      break;
     case(kNone):
     default: break;
   }

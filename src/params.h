@@ -38,6 +38,7 @@
 #define WON 0
 #define LOST 1
 #define PLAYING 2
+#define PAUSED 3
 
 // entity
 #define DEFAULT_POSE \
