@@ -51,8 +51,9 @@ void Arena::AddRobot() {
 void Arena::AddEntity(EntityType type, int quantity) {
   for (int i = 0; i < quantity; i++) {
     if(type == kObstacle) {
-      mobile_entities_.push_back(dynamic_cast<Obstacle *>(factory_->CreateEntity(type)));
-      entities_.push_back(dynamic_cast<Obstacle *>(factory_->CreateEntity(type)));
+      Obstacle* obstacle = dynamic_cast<Obstacle *>(factory_->CreateEntity(type));
+      mobile_entities_.push_back(obstacle);
+      entities_.push_back(obstacle);
     } else {
       entities_.push_back(factory_->CreateEntity(type));
     }
