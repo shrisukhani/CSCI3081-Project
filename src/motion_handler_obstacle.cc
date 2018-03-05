@@ -43,6 +43,7 @@ void MotionHandlerObstacle::UpdateVelocity() {
   }
   int collision_timer = get_collision_timer();
   if (collision_timer > 0) {
+    set_velocity(-2.0, -1.0);
     printf("%d\n", collision_timer);
     entity_->RelativeChangeHeading(+9.0);
     set_collision_timer(collision_timer - 1);
