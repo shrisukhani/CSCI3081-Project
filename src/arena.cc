@@ -98,8 +98,6 @@ void Arena::UpdateEntitiesTimestep() {
      set_game_status(WON);
    }
 
-
-
    /* Determine if any mobile entity is colliding with wall.
    * Adjust the position accordingly so it doesn't overlap.
    */
@@ -107,12 +105,9 @@ void Arena::UpdateEntitiesTimestep() {
     EntityType wall = GetCollisionWall(ent1);
     if (kUndefined != wall) {
       AdjustWallOverlap(ent1, wall);
-      if (ent1->get_type() == kRobot) {
-        ent1->HandleCollision(wall, NULL);
-      } else {
-        ent1->HandleCollision(wall, NULL);
-      }
+      ent1->HandleCollision(wall, NULL);
     }
+
     /* Determine if that mobile entity is colliding with any other entity.
     * Adjust the position accordingly so they don't overlap.
     */
