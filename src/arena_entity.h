@@ -120,9 +120,10 @@ class ArenaEntity {
     // OBSTACLE_MIN_RAIDUS and OBSTACLE_MAX_RADIUS are available from params.h
     double val = static_cast<double>(rand());
     val /= RAND_MAX;
-    return OBSTACLE_MIN_RADIUS + val*(OBSTACLE_MAX_RADIUS - OBSTACLE_MIN_RADIUS);
+    return OBSTACLE_MIN_RADIUS + val*(OBSTACLE_MAX_RADIUS -
+      OBSTACLE_MIN_RADIUS);
   }
-  
+
   /**
    * @brief Setter method for heading within entity pose variable.
    */
@@ -174,4 +175,4 @@ class ArenaEntity {
 
 NAMESPACE_END(csci3081);
 
-#endif /* SRC_ARENA_ENTITY_H_ */
+#endif // SRC_ARENA_ENTITY_H_
