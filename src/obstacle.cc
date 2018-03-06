@@ -43,26 +43,23 @@ void Obstacle::Reset() {
   set_color(OBSTACLE_COLOR);
   sensor_touch_->Reset();
   motion_handler_.set_velocity(1, 1);
-  // motion_behavior_(this);
 }
 
-void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object, bool dec_robot_life) {
+void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object) {
   motion_handler_.set_collision_timer(20);
   sensor_touch_->HandleCollision(object_type, object);
-  //motion_handler_.UpdateVelocity();
   switch (object_type) {
     case kRightWall:
     case kLeftWall:
     case kTopWall:
     case kBottomWall:
-      //motion_handler_.UpdateVelocity();
       break;
     case kRobot:
       break;
     case kBase:
       break;
     default:
-      dec_robot_life = !dec_robot_life;
+      //dec_robot_life = !dec_robot_life;
       break;
   }
 }
