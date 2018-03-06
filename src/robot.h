@@ -71,7 +71,7 @@ class Robot : public ArenaMobileEntity {
    */
   void HandleCollision(EntityType object_type, ArenaEntity * object =
     NULL) override;
-    
+
   /**
    * @brief Get the name of the Robot for visualization and for debugging.
    */
