@@ -19,7 +19,7 @@ NAMESPACE_BEGIN(csci3081);
  * Constructors/Destructor
  ******************************************************************************/
 Obstacle::Obstacle() : motion_handler_(this), motion_behavior_(this) {
-  motion_handler_.set_velocity(1,1);
+  motion_handler_.set_velocity(1, 1);
   set_color(OBSTACLE_COLOR);
   set_pose(OBSTACLE_POSITION);
   set_radius(OBSTACLE_RADIUS);
@@ -59,7 +59,6 @@ void Obstacle::HandleCollision(EntityType object_type, ArenaEntity * object) {
     case kBase:
       break;
     default:
-      //dec_robot_life = !dec_robot_life;
       break;
   }
 }
