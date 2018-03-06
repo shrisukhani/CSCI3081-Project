@@ -21,7 +21,7 @@ NAMESPACE_BEGIN(csci3081);
 Base::Base() : ArenaImmobileEntity(), captured_(false) {
   set_type(kBase);
   set_color(BASE_COLOR);
-  set_pose(BASE_INIT_POS);
+  set_pose(SetPoseRandomly());
   set_radius(BASE_RADIUS);
 }
 
@@ -29,7 +29,7 @@ Base::Base() : ArenaImmobileEntity(), captured_(false) {
  * Member Functions
  ******************************************************************************/
 void Base::Reset() {
-  set_pose(BASE_INIT_POS);
+  set_pose(SetPoseRandomly());
 } /* Reset */
 
 NAMESPACE_END(csci3081);
