@@ -60,26 +60,6 @@ class ArenaMobileEntity : public ArenaEntity {
   */
   SensorTouch * get_touch_sensor() { return sensor_touch_; }
 
-  /**
-   * @brief Get a random position in the arena
-  */
-  Pose SetPoseRandomly() {
-    // Dividing arena into 19x14 grid. Each grid square is 50x50
-    return {static_cast<double>((30 + (random() % 19) * 50)),
-          static_cast<double>((30 + (random() % 14) * 50))};
-  }
-
-
-  /**
-   * @brief Get a random radius for obstacle
-  */
-  double SetRadiusRandomly() {
-    // OBSTACLE_MIN_RAIDUS and OBSTACLE_MAX_RADIUS are available from params.h
-    double val = static_cast<double>(rand());
-    val /= RAND_MAX;
-    return OBSTACLE_MIN_RADIUS + val*(OBSTACLE_MAX_RADIUS - OBSTACLE_MIN_RADIUS);
-  }
-
  private:
   double speed_;
 
