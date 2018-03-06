@@ -65,7 +65,7 @@ Communication Controller::ConvertComm(Communication com) {
     case (kKeyDown) : return kDecreaseSpeed;
     case (kKeyLeft) : return kTurnLeft;
     case (kKeyRight) : return kTurnRight;
-    case (kPlay) : return kPlay; // Not sure about this one
+    case (kPlay) : return kPlay;
     case (kPause) : return kPause;
     case (kNewGame) : return kReset;
     default: return kNone;

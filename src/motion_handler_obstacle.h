@@ -40,7 +40,8 @@ class MotionHandlerObstacle : public MotionHandler {
       : MotionHandler(ent) {}
 
   MotionHandlerObstacle(const MotionHandlerObstacle& other) = default;
-  MotionHandlerObstacle& operator=(const MotionHandlerObstacle& other) = default;
+  MotionHandlerObstacle& operator=(const MotionHandlerObstacle&
+    other) = default;
 
   /**
   * @brief Update the speed and the pose angle according to the sensor readings.
