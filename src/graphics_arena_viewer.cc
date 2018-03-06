@@ -102,7 +102,7 @@ void GraphicsArenaViewer::OnSpecialKeyDown(int key,
   break;
       case GLFW_KEY_DOWN:
      key_value = kKeyDown;
-  break;  
+  break;
       default: {}
     }
   controller_->AcceptCommunication(key_value);
