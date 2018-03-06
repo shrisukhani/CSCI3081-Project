@@ -76,6 +76,7 @@ void GraphicsArenaViewer::OnPlayingBtnPressed() {
 }
 
 void GraphicsArenaViewer::OnNewGameBtnPressed() {
+  paused_ = true;
   controller_->AcceptCommunication(kNewGame);
 }
 
