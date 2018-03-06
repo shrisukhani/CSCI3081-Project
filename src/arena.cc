@@ -98,9 +98,10 @@ void Arena::UpdateEntitiesTimestep() {
      set_game_status(WON);
    }
 
-   /* Determine if any mobile entity is colliding with wall.
+  /* Determine if any mobile entity is colliding with wall.
    * Adjust the position accordingly so it doesn't overlap.
    */
+
   for (auto &ent1 : mobile_entities_) {
     EntityType wall = GetCollisionWall(ent1);
     if (kUndefined != wall) {
