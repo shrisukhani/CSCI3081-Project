@@ -69,12 +69,15 @@ class Robot : public ArenaMobileEntity {
   /**
    * @brief Handles the collision by setting the sensor to activated.
    */
-  void HandleCollision(EntityType object_type, ArenaEntity * object = NULL) override;//, bool dec_robot_life = false) override;
-
+  void HandleCollision(EntityType object_type, ArenaEntity * object =
+    NULL) override;
+    
   /**
    * @brief Get the name of the Robot for visualization and for debugging.
    */
-  std::string get_name() const override { return ("Robot. L:" + std::to_string(lives_)); }
+  std::string get_name() const override {
+    return ("Robot. L:" + std::to_string(lives_));
+  }
 
   /**
    * @brief Command that comes from the controller, then is passed to handler.
