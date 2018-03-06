@@ -60,7 +60,7 @@ void Robot::HandleCollision(EntityType object_type, ArenaEntity * object) {// , 
     case kTopWall:
     case kBottomWall:
     case kObstacle:
-      lives --;
+      lives_--;
       break;
     case kBase: if (static_cast<Base *>(object)->IsCaptured() == false) {
                   object->change_color();
