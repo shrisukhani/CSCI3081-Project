@@ -89,15 +89,15 @@ void Arena::UpdateEntitiesTimestep() {
     ent->TimestepUpdate(1);
   }
 
-   /*
+  /*
    * Check for win/loss
    */
-   if (robot_->get_lives() == 0) {
-     set_game_status(LOST);
-   }
-   if (robot_->num_bases_captured == N_BASES) {
-     set_game_status(WON);
-   }
+  if (robot_->get_lives() == 0) {
+   set_game_status(LOST);
+  }
+  if (robot_->num_bases_captured == N_BASES) {
+   set_game_status(WON);
+  }
 
   /* Determine if any mobile entity is colliding with wall.
    * Adjust the position accordingly so it doesn't overlap.
@@ -206,7 +206,7 @@ void Arena::AcceptCommand(Communication com) {
   switch (com) {
     case(kIncreaseSpeed):
       robot_->IncreaseSpeed();
-			break;
+      break;
     case(kDecreaseSpeed):
       robot_->DecreaseSpeed();
       break;
