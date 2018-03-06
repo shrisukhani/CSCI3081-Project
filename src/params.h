@@ -29,7 +29,7 @@
 
 // arena
 #define N_BASES 3
-#define N_OBSTACLES 4
+#define N_OBSTACLES 6
 #define MAX_OBSTACLES 8
 #define ARENA_X_DIM X_DIM
 #define ARENA_Y_DIM Y_DIM
