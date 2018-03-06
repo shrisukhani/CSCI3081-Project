@@ -39,13 +39,13 @@ class MotionHandler {
    * @brief Constructor.
    */
   explicit MotionHandler(ArenaMobileEntity * ent)
-    : velocity_(0,0), entity_(ent) {}
+    : velocity_(0, 0), entity_(ent) {}
 
   virtual ~MotionHandler() {}
 
   MotionHandler(const MotionHandler& other) = default;
   MotionHandler& operator=(const MotionHandler& other) = default;
-  
+
  /**
   * @brief Update the heading angle according to the touch sensor reading.
   */
