@@ -120,11 +120,7 @@ void Arena::UpdateEntitiesTimestep() {
       if (ent2 == ent1) { continue; }
       if (IsColliding(ent1, ent2)) {
         AdjustEntityOverlap(ent1, ent2);
-        if (ent1->get_type() == kRobot) {
-          ent1->HandleCollision(ent2->get_type(), ent2);//, true);
-        } else {
-          ent1->HandleCollision(ent2->get_type(), ent2);//, false);
-        }
+        ent1->HandleCollision(ent2->get_type(), ent2);
       }
     }
   }
