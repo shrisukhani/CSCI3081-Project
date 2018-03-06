@@ -20,15 +20,14 @@ NAMESPACE_BEGIN(csci3081);
  ******************************************************************************/
 // @TODO add clamped
 
-void MotionHandlerObstacle::TurnLeft(){}
+void MotionHandlerObstacle::TurnLeft() {}
 
-void MotionHandlerObstacle::TurnRight(){}
+void MotionHandlerObstacle::TurnRight() {}
 
-void MotionHandlerObstacle::Stop(){
+void MotionHandlerObstacle::Stop() {
   set_velocity(
     0.0,
-    0.0
-  );
+    0.0);
 }
 
 
@@ -36,7 +35,6 @@ void MotionHandlerObstacle::IncreaseSpeed() {}
 
 void MotionHandlerObstacle::DecreaseSpeed() {}
 
-//@TODO: Finish implementation
 void MotionHandlerObstacle::UpdateVelocity() {
   if (entity_->get_touch_sensor()->get_output()) {
     entity_->RelativeChangeHeading(+180);
