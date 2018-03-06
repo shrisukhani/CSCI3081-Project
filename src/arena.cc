@@ -93,10 +93,10 @@ void Arena::UpdateEntitiesTimestep() {
    * Check for win/loss
    */
   if (robot_->get_lives() == 0) {
-   set_game_status(LOST);
+    set_game_status(LOST);
   }
   if (robot_->num_bases_captured == N_BASES) {
-   set_game_status(WON);
+    set_game_status(WON);
   }
 
   /* Determine if any mobile entity is colliding with wall.
