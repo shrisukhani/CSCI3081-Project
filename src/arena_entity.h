@@ -175,4 +175,4 @@ class ArenaEntity {
 
 NAMESPACE_END(csci3081);
 
-#endif // SRC_ARENA_ENTITY_H_
+#endif  // SRC_ARENA_ENTITY_H_
