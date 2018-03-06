@@ -50,8 +50,9 @@ void Arena::AddRobot() {
 
 void Arena::AddEntity(EntityType type, int quantity) {
   for (int i = 0; i < quantity; i++) {
-    if(type == kObstacle) {
-      Obstacle* obstacle = dynamic_cast<Obstacle *>(factory_->CreateEntity(type));
+    if (type == kObstacle) {
+      Obstacle* obstacle = dynamic_cast<Obstacle *>(
+        factory_->CreateEntity(type));
       mobile_entities_.push_back(obstacle);
       entities_.push_back(obstacle);
     } else {
@@ -88,7 +89,7 @@ void Arena::UpdateEntitiesTimestep() {
     ent->TimestepUpdate(1);
   }
 
-  /*
+   /*
    * Check for win/loss
    */
    if (robot_->get_lives() == 0) {
