@@ -48,10 +48,9 @@ void Robot::Reset() {
   motion_handler_.set_max_angle(ROBOT_MAX_ANGLE);
   lives_ = 9;
   sensor_touch_->Reset();
-
 } /* Reset() */
 
-void Robot::HandleCollision(EntityType object_type, ArenaEntity * object) {// , bool dec_robot_life) {
+void Robot::HandleCollision(EntityType object_type, ArenaEntity * object) {
   set_speed(0);
   motion_handler_.Stop();
   switch (object_type) {
@@ -65,7 +64,7 @@ void Robot::HandleCollision(EntityType object_type, ArenaEntity * object) {// , 
     case kBase: if (static_cast<Base *>(object)->IsCaptured() == false) {
                   object->change_color();
                   static_cast<Base *>(object)->set_captured(true);
-                  num_bases_captured ++;
+                  num_bases_captured++;
                 }
                 break;
     default: break;
