@@ -169,6 +169,19 @@ void GraphicsArenaViewer::DrawEntity(NVGcontext *ctx,
           static_cast<float>(entity->get_pose().x),
           static_cast<float>(entity->get_pose().y),
           entity->get_name().c_str(), nullptr);
+
+  // win/lose stuff
+  if (arena_->get_game_status() == WON) {
+    nvgText(ctx,
+            static_cast<float>(X_DIM/2),
+            static_cast<float>(Y_DIM/2),
+            "You Won!", nullptr);
+  } else if (arena_->get_game_status() == LOST) {
+    nvgText(ctx,
+            static_cast<float>(X_DIM/2),
+            static_cast<float>(Y_DIM/2),
+            "You Won!", nullptr);
+  }
 }
 
 void GraphicsArenaViewer::DrawUsingNanoVG(NVGcontext *ctx) {
