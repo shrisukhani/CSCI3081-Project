@@ -180,7 +180,7 @@ void GraphicsArenaViewer::DrawEntity(NVGcontext *ctx,
     nvgText(ctx,
             static_cast<float>(X_DIM/2),
             static_cast<float>(Y_DIM/2),
-            "You Won!", nullptr);
+            "You Lost!", nullptr);
   }
 }
 
